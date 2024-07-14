@@ -25,3 +25,9 @@ jobs:
           echo "Custom message: $MESSAGE"
         env:
           MESSAGE: ${{ inputs.custom_message }}
+          
+      - name: Printing run-job boolean value
+        run: |
+        if: ${{ github.event.inputs.run_job == 'true' }}
+          echo "run_job"
+      
