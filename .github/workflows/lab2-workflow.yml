@@ -3,7 +3,7 @@ name: Exploring Workflow Dispatch Trigger
 on:
   workflow_dispatch:
     inputs:
-      run_job:
+      run-job:
         description: Run Specific Job
         type: boolean
         required: false
@@ -32,5 +32,5 @@ jobs:
       - name: Printing run-job boolean value
         run: |
         if: ${{ github.event.inputs.run_job == 'true' }}
-          echo "run_job"
+          echo "run-job"
       
