@@ -11,9 +11,6 @@ on:
         description: Enter a custom message
         type: string
         required: true
-        
-env:
-  DEBUG: true
   
 jobs:
   job1:
@@ -31,6 +28,6 @@ jobs:
           
       - name: Printing run-job boolean value
         run: |
-        if: ${{ github.event.inputs.run-job == 'true' }}
+        if: ${{ inputs.run-job == 'true' }}
           echo ${{ inputs.run-job }}
       
