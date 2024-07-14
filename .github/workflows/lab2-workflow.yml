@@ -21,13 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Printing Custom Message
-        run: |
-          echo "Custom message: $MESSAGE"
-        env:
-          MESSAGE: ${{ inputs.custom_message }}
-          
+        run: echo ${{inputs.custom_message}}
       - name: Printing run-job boolean value
-        run: |
-        if: ${{ inputs.run-job == 'true' }}
-          echo ${{ inputs.run-job }}
-      
+        if: ${{ inputs.run-job == true }}
+        run: echo ${{ inputs.run-job }}
